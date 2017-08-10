@@ -1,0 +1,26 @@
+body{
+    margin: 10%;
+    width: 70%;
+    height: auto;
+
+
+}
+.container{
+    column-width: 250px;
+    -webkit-column-width: 250px;
+    -webkit-column-gap: 5px;
+    column-gap: 5px;
+    -webkit-transform: all;
+    -moz-transform: all;
+    -ms-transform: all;
+    -o-transform: all;
+    transform: all;
+}
+.container div{
+    width: 250px;
+    margin: 5px auto;
+}
+.container p{
+    text-align: center;
+    color: #199009;
+}

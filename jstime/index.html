@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="username">
+<button id="btn" onclick="gooo()">按钮</button>
+<p id="ptime"></p>
+<script>
+//    var mytime = setInterval(function () {
+//        gettime();
+//    }, 1000);
+//
+//    function gettime() {
+//        var d = new Date();
+//        var time = d.toLocaleTimeString();
+//        document.getElementById("ptime").innerHTML = time;
+//    }
+//
+//    function stoptime(){
+//        clearInterval(mytime);
+//    }
+function gooo(){
+    var name = document.getElementById("username").value;
+    if (name == "hello"){
+        history.go(-1);
+    }else {
+        alert("输入错误");
+    }
+}
+
+</script>
+</body>
+</html>

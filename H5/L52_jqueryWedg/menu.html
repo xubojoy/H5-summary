@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-2.2.2.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="menu.js"></script>
+    <link href="jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <style>
+
+        .ui-menu:after{
+            content: ".";
+            display: block;
+            clear: both;
+            visibility: hidden;
+            line-height: 0;
+            height: 0;
+        }
+        .ui-menu .ui-menu-item{
+            display: inline-block;
+            float: left;
+            margin: 0px;
+            padding: 10px;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+<ul id="menu">
+    <li>hello</li>
+    <li>
+        <a href="#">hello</a>
+        <ul>
+            <li>world</li>
+            <li>world</li>
+            <li>world</li>
+            <li>world</li>
+        </ul>
+    </li>
+
+    <li>hello</li>
+    <li>hello</li>
+    <li>hello</li>
+    <li>hello</li>
+    <li>hello</li>
+    <li>hello</li>
+</ul>
+</body>
+</html>

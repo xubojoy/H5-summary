@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload = "startTime()">
+<!--<p id="pid">hello</p>-->
+<!--<p id="pclass">hello</p>-->
+<!--&lt;!&ndash;<input type="text" onchange="demo(this)">&ndash;&gt;-->
+<!--<button onclick="demo()">按钮</button>-->
+<!--<script>-->
+<!--//    &lt;!&ndash;function demo (ooj){&ndash;&gt;-->
+<!--//        &lt;!&ndash;ooj.style.backgroundColor = "blue";&ndash;&gt;-->
+<!--//    &lt;!&ndash;}&ndash;&gt;-->
+<!--function demo (){-->
+<!--var nv = document.getElementById("pid").innerHTML = "WS";-->
+<!--//        nv.innerHTML = "world";-->
+<!--document.getElementsByName("p");-->
+<!--}-->
+<!--</script>-->
+
+
+<!--<button id="btn">按钮</button>-->
+<!--<script>-->
+<!--var x = document.getElementById("btn");-->
+<!--x.addEventListener("click",hello);-->
+<!--x.addEventListener("click",world);-->
+<!--function hello(){-->
+<!--alert("hello");-->
+<!--}-->
+<!--function world (){-->
+<!--alert("world");-->
+<!--}-->
+<!--</script>-->
+
+<script>
+    //    people = new Object();
+    //    people.name = "xubojoy";
+    //    people.age = "11111";
+    //    document.write("姓名:"+people.name+"<br/>age:"+people.age);
+    //    function people(name,age){
+    //        this.name = name;
+    //        this.age = age;
+    //    }
+    //    son = new people("iwen",30);
+    //    document.write("姓名:"+son.name+"<br/>age:"+son.age);
+
+    //    var date = new Date();
+    //    document.write(date);
+    function startTime() {
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById("timeTxt").innerHTML = h+":"+m+":"+s;
+        t = setTimeout(function(){
+            startTime();
+
+        },500)
+    }
+
+    function checkTime(i) {
+        if (i < 10) {
+            i  = "0"+i;
+        }
+        return i;
+    }
+
+//    document.write(parseInt(Math.random()*10));
+</script>
+<div id="timeTxt">
+
+
+</div>
+</body>
+</html>
