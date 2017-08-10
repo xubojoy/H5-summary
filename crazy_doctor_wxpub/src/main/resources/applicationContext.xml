@@ -1,0 +1,45 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:ehcache="http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.2.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+	http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring 
+	http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring/ehcache-spring-1.2.xsd">
+
+	<context:component-scan base-package="cn.crazy.doctor.service" />
+    
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:conf.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean class="cn.crazy.doctor.common.Constant">
+		<property name="serviceUrl" value="${serviceUrl}"/>
+		<property name="mobileUrl" value="${mobileUrl}"/>
+		<property name="payUrl" value="${payUrl}"></property>
+		
+		<property name="wxpubAppId" value="${wxpubAppId}"></property>
+		<property name="wxpubAppSecret" value="${wxpubAppSecret}"></property>
+		<property name="wxpubWxAccount" value="${wxpubWxaccount}"></property>
+		<property name="wxAccessTokenUrl" value="${wxAccessTokenUrl}"></property>
+		<property name="wxJsapiTicketUrl" value="${wxJsapiTicketUrl}"></property>
+		<property name="domainUrl" value="${domainUrl}"></property>
+	</bean>	
+	<bean id="httpComponentsClientHttpRequestFactory" class="org.springframework.http.client.HttpComponentsClientHttpRequestFactory"/>
+   	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+	    <constructor-arg ref="httpComponentsClientHttpRequestFactory"/>
+	</bean>
+	<bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"/> 
+	
+</beans>
