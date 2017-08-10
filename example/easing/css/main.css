@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/*reset*/
+.index {
+  padding: 0 10px; }
+
+.index dd {
+  margin: 0;
+  padding: 0 0 10px; }
+
+.index canvas {
+  border: 1px solid #efefef; }
+
+/*移动物体*/
+
+/*# sourceMappingURL=main.css.map */
